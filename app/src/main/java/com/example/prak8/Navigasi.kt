@@ -30,3 +30,7 @@ val JenisK = listOf(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+fun SiswaApp(
+    modifier: Modifier = Modifier,
+    viewModel: SiswaViewModel = viewModel(),
+)
