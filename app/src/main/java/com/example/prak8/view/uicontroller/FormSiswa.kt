@@ -16,3 +16,17 @@ import com.example.prak8.model.Siswa
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+fun FormSiswa(
+    pilihanJK: List<String>,
+    onSubmitButtonClicked: (Siswa) -> Unit
+) {
+    var txtNama by rememberSaveable { mutableStateOf("") }
+    var txtGender by rememberSaveable { mutableStateOf("") }
+    var txtAlamat by rememberSaveable { mutableStateOf("") }
+
+    val dataSiswa = Siswa(
+        nama = txtNama,
+        gender = txtGender,
+        alamat = txtAlamat
+    )
+
