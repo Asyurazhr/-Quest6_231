@@ -25,3 +25,46 @@ fun TampilSiswa(
         stringResource(id = R.string.alamat) to statusUISiswa.alamat
     )
 
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(R.string.detail),
+                        color = colorResource(R.color.white)
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorResource(id = R.color.purple_500)
+                )
+            )
+        }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier.padding(paddingValues),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Column(
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.padding_medium)
+                ),
+                verticalArrangement = Arrangement.spacedBy(
+                    dimensionResource(id = R.dimen.padding_small)
+                )
+            ) {
+                for (item in items) {
+                    Column {
+                        Text(
+                            text = item.first.uppercase(),
+                            fontSize = 16.sp
+                        )
+                        Text(
+                            text = item.second,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
+                        Divider(thickness = 1.dp)
+                    }
+                }
+            }
