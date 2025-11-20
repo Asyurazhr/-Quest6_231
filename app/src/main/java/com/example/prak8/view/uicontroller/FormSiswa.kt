@@ -44,3 +44,31 @@ fun FormSiswa(
                 )
             )
         }
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(isiRuang)
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.SpaceBetween,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            OutlinedTextField(
+                value = txtNama,
+                onValueChange = { txtNama = it },
+                label = { Text(text = "Nama Lengkap") },
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+                singleLine = true,
+                shape = MaterialTheme.shapes.medium
+            )
+
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(12.dp)
+                    .width(250.dp),
+                thickness = 1.dp,
+                color = Color.Blue
+            )
+
