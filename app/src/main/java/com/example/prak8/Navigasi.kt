@@ -33,4 +33,6 @@ val JenisK = listOf(
 fun SiswaApp(
     modifier: Modifier = Modifier,
     viewModel: SiswaViewModel = viewModel(),
-)
+) {
+    val navController: NavHostController = rememberNavController()
+    val uiState by viewModel.statusUI.collectAsState()
