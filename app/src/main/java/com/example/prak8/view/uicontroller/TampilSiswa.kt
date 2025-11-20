@@ -15,3 +15,13 @@ import com.example.prak8.model.Siswa
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+fun TampilSiswa(
+    statusUISiswa: Siswa,
+    onBackButtonClicked: () -> Unit
+) {
+    val items: List<Pair<String, String>> = listOf(
+        stringResource(id = R.string.nama) to statusUISiswa.nama,
+        stringResource(id = R.string.gender) to statusUISiswa.gender,
+        stringResource(id = R.string.alamat) to statusUISiswa.alamat
+    )
+
