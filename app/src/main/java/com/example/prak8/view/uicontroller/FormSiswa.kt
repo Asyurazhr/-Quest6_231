@@ -72,3 +72,50 @@ fun FormSiswa(
                 color = Color.Blue
             )
 
+            Row {
+                pilihanJK.forEach { item ->
+                    Row(
+                        modifier = Modifier.selectable(
+                            selected = txtGender == item,
+                            onClick = { txtGender = item }
+                        ),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = txtGender == item,
+                            onClick = { txtGender = item }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
+
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(5.dp)
+                    .width(250.dp),
+                thickness = 1.dp,
+                color = Color.Blue
+            )
+
+            OutlinedTextField(
+                value = txtAlamat,
+                onValueChange = { txtAlamat = it },
+                label = { Text(text = "Alamat Lengkap") },
+                modifier = Modifier.width(250.dp),
+                singleLine = true,
+                shape = MaterialTheme.shapes.medium
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                enabled = txtAlamat.isNotEmpty(),
+                onClick = { onSubmitButtonClicked(dataSiswa) }
+            ) {
+                Text(text = stringResource(id = R.string.submit))
+            }
+        }
+    }
+}
