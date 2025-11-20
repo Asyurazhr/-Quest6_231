@@ -36,3 +36,5 @@ fun SiswaApp(
 ) {
     val navController: NavHostController = rememberNavController()
     val uiState by viewModel.statusUI.collectAsState()
+
+    Scaffold(modifier = modifier) { isiRuang ->
